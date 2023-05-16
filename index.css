@@ -1,26 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 
 *{
-	padding:0;
-	marfin:0;
+	padding: 0;
+	margin: 0;
 	box-sizing: border-box;
 }
 
 img{
-	width:100%;
-	height:100%;
+	width: 100%;
+	height: 100%;
 	object-fit: cover;
 }
 
 html{
 	font-family: 'Oswald';
 	font-size: 12 px;
-	font-weight:600;
+	font-weight: 600;
 }
 
 section{
-	min-height: 100 vh;
-	width:100%;
+	min-height: 100vh;
+	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -54,10 +54,10 @@ form input{
 	width: 90%;
 	background-color: transparent;
 	padding: 10px;
-	border:none;
-	outline:none;
+	border: none;
+	outline: none;
 	font-size: 2rem;
-	display:inline-block;
+	display: inline-block;
 }
 
 form ion-icon{
@@ -71,20 +71,20 @@ form ion-icon{
 .search-result{
 	margin-top: 50px;
 	width: 100%;
-	display:grid;
+	display: grid;
 	grid-gap: 25px;
 	grid-template: auto /repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .image-container {
-  display: flex;
-  flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .image-container img {
-  width: 33.33%;
-  height: auto;
-  object-fit: cover;
+	width: 33.33%;
+	height: auto;
+	object-fit: cover;
 }
 
 .item{
@@ -98,16 +98,16 @@ form ion-icon{
 }
 
 .item img{
-width: 100%;
-height: 300px;
-border-radius: 4px;
-object-fit: cover;
+	width: 100%;
+	height: 300px;
+	border-radius: 4px;
+	object-fit: cover;
 }
 
 .item.flex-container{ 
-display:flex;
-align-items: center;
-justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .item .title{
@@ -121,13 +121,12 @@ justify-content: space-between;
 	text-decoration: none;
 	text-align: center;
 	width: 130px;
-	padding: 10px; 0;
+	padding: 10px 0;
 	background-color: 44041;
 	color: white;
 	font-size: 1.4rem;
 	margin-top: 20px;
 	align-self: flex-start;
-	
 }
 
 .item-data{
@@ -137,5 +136,4 @@ justify-content: space-between;
 	font-size:1.4rem;
 	letter-spacing: .05rem;
 	line-height: 2rem;
-
 }
