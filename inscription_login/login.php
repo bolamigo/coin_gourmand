@@ -1,9 +1,6 @@
 <?php
 // Connexion à la base de données
-$servername = "zikosfnprojetweb.mysql.db";
-$username = "zikosfnprojetweb";
-$password = "bJZGZgrQz2h5";
-$dbname = "zikosfnprojetweb";
+include '../sql.php';
 
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
