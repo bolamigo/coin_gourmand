@@ -1,20 +1,23 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
 *{
 	padding:0;
 	marfin:0;
 	box-sizing: border-box;
 }
+
 img{
 	width:100%;
 	height:100%;
 	object-fit: cover;
 }
+
 html{
 	font-family: 'Oswald';
 	font-size: 12 px;
 	font-weight:600;
 }
+
 section{
 	min-height: 100 vh;
 	width:100%;
@@ -24,18 +27,21 @@ section{
 	padding: 100px 0;
 	background-color: rgb(26,28,27);
 }
+
 .container{
 	width: 90%;
 	height: auto; 
 	max-width: 1200px;
 	margin: 0 auto;
 }
+
 .brand{
 	text-align: center;
 	font-size: 4rem;
 	color: whitesmoke;
 	margin-bottom: 30px;
 }
+
 form{
 	width: 90%;
 	max-width: 400px;
@@ -43,6 +49,7 @@ form{
 	background-color: rgb(223,223,223);
 	border-radius:4px;
 }
+
 form input{
 	width: 90%;
 	background-color: transparent;
@@ -52,6 +59,7 @@ form input{
 	font-size: 2rem;
 	display:inline-block;
 }
+
 form ion-icon{
 	width: 20px;
 	height: 20px;
@@ -59,6 +67,7 @@ form ion-icon{
 	margin-right: 10px;
 	filter: invert(100%);
 }
+
 .search-result{
 	margin-top: 50px;
 	width: 100%;
@@ -66,15 +75,18 @@ form ion-icon{
 	grid-gap: 25px;
 	grid-template: auto /repeat(auto-fit, minmax(300px, 1fr));
 }
+
 .image-container {
   display: flex;
   flex-wrap: wrap;
 }
+
 .image-container img {
   width: 33.33%;
   height: auto;
   object-fit: cover;
 }
+
 .item{
 	width: 100%;
 	border-radius: 8px;
@@ -84,23 +96,27 @@ form ion-icon{
 	display: flex;
 	flex-wrap: wrap;
 }
+
 .item img{
 width: 100%;
 height: 300px;
 border-radius: 4px;
 object-fit: cover;
 }
+
 .item.flex-container{ 
 display:flex;
 align-items: center;
 justify-content: space-between;
 }
+
 .item .title{
 	color: whitesmoke;
 	margin: 20px 10px 0 0;
 	font-size: 1.8rem;
 	font-weight: 400;
 }
+
 .view-button{
 	text-decoration: none;
 	text-align: center;
@@ -113,6 +129,7 @@ justify-content: space-between;
 	align-self: flex-start;
 	
 }
+
 .item-data{
 	color: whitesmoke;
 	display: block;
@@ -122,7 +139,3 @@ justify-content: space-between;
 	line-height: 2rem;
 
 }
-	
-	
-	
-
