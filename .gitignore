@@ -1,0 +1,39 @@
+# Logs and databases #
+######################
+*.sql
+sql.php
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# OS or program generated files #
+#################################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.pyo
+*.pyc
+*~
+*.bak
+*.swp
+
+# Compiled source #
+###################
+*.class
+*.exe
+*.dll
+*.o
+*.com
+*.so
