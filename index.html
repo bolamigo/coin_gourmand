@@ -1,50 +1,52 @@
 <!DOCTYPE html>
+<html lang="fr">
 <head>
-	 <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodie</title>
+    <title>Le Coin Gourmand</title>
     <link rel="stylesheet" href="index.css?1">
-	<body>
+</head>
+<body>
 	<section>
 		<div class ="container">
-			<h1 class="brand"> Recipe Wesite </h1>
+			<h1 class="brand">Le Coin Gourmand</h1>
 			<form>
-				<input type="text" placeholder="Search Your Recipe...">
+				<input type="text" placeholder="Rechercher une recette...">
 				<ion-icon name="search"></ion-icon>
 			</form>
 			<div class="search-result">
-				<div class="item">
+				<div class="item" id="donuts">
 					<img src="image/donuts.jpg">
 					<div class="flex-container">
-						<h1 class="title"> Donuts </h1>
-						<a class="view-button" href="#"> View Recipe </a>
+						<h1 class="title">Donuts</h1>
 					</div>
 				</div>
-				<div class="item">
+				<div class="item" id="apple_pie">
 					<img src="image/apple_pie.jpg">
 					<div class="flex-container">
-						<h1 class="title"> Apple pie </h1>
-						<a class="view-button" href="#"> View Recipe </a>
+						<h1 class="title">Tarte aux pommes</h1>
 					</div>
 				</div>
-				<div class="item">
+				<div class="item" id="rainbow_cake">
 					<img src="image/rainbow_cake.jpg">
 					<div class="flex-container">
-						<h1 class="title"> Rainbow cake </h1>
-						<a class="view-button" href="#"> View Recipe </a>
+						<h1 class="title">Gâteau arc-en-ciel</h1>
 					</div>
 				</div>
-				<div class="item">
+				<div class="item" id="pancakes">
 					<img src="image/pancakes.jpg">
 					<div class="flex-container">
-						<h1 class="title"> Pancakes </h1>
-						<a class="view-button" href="#"> View Recipe </a>
+						<h1 class="title">Pancakes</h1>
 					</div>
 				</div>
 				
 		</div>
 	</section>
+
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script src="jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/validate-js/2.0.1/validate.min.js" integrity="sha512-8GLIg5ayTvD6F9ML/cSRMD19nHqaLPWxISikfc5hsMJyX7Pm+IIbHlhBDY2slGisYLBqiVNVll+71CYDD5RBqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="functions.js?1"></script>
+	<script src="index.js?1"></script>
 </body>
 </html>
