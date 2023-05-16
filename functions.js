@@ -1,3 +1,7 @@
+const regex={
+	url:/^((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)$/,
+	mail:/^([a-z0-9_\.\+-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+};
 // This function returns the next element in the DOM hierarchy that matches the given selector
 function nextInDOM(_selector, _subject) {
     let next = getNext(_subject); // Get the next element after the subject element
