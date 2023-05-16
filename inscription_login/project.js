@@ -1,4 +1,3 @@
-
 // Récupérer le formulaire et écouter l'événement submit
 const form = document.getElementById("login-form");
 form.addEventListener("submit", function(event) {
@@ -32,7 +31,6 @@ function inscription() {
   if (email && password && confirmPassword && password === confirmPassword) {
     // Créer une instance de XMLHttpRequest
     
-    };
   } else {
     alert("Veuillez remplir tous les champs et vérifier que les mots de passe correspondent.");
   }
