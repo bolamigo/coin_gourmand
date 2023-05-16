@@ -1,0 +1,51 @@
+
+#header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px;
+      background-color: #333;
+      color: white;
+    }
+    #header h1 {
+      margin: 0;
+    }
+    #search {
+      padding: 8px;
+      margin: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      width: 30%;
+    }
+    #register-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    input[type="email"],
+    input[type="password"],
+    input[type="age"],
+    input[type="nickname"] {
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+    button[type="submit"],
+    button[type="reset"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button[type="submit"]:hover,
+    button[type="reset"]:hover {
+      background-color: #45a049;
+    }
+  </style>
