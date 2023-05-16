@@ -30,6 +30,8 @@ Téléchargez **Git Bash** : https://gitforwindows.org/ et utilisez **toujours G
 ### Après chaque étape ou chaque heure environ
 * Vérifiez les fichiers que vous avez modifié avec **git status**
 * Vérifiez les modifications avec **git diff**
+* Ajoutez les fichiers correspondants à votre modification avec **git add \<fichier\>**
+> **git add \*** pour ajouter toutes vos modifications au commit
 * Créez un commit avec **git commit -m \<message\>**.
 **Le message doit contenir une brève description de vos modification**
 
