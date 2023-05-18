@@ -24,10 +24,10 @@ Téléchargez **Git Bash** : https://gitforwindows.org/ et utilisez **toujours G
 
 ## Utilisation
 
-### En début de session
+### En début de session ou en début de grosse étape
 
 * Déplacez vous avec "cd" dans votre repo local, vérifiez que vous voyez le **(main)**
-* Mettez à jour votre repo local avec **git pull origin master**
+* Mettez à jour votre repo local avec **git pull origin main**
 
 ### Après chaque étape ou chaque heure environ
 
