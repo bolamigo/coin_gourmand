@@ -38,6 +38,14 @@ function searchFor(_selector, _subject) {
 function open_link_new_tab(link){
 	if(!link.match(regex.url)) return 'err 531'; // Check if the link matches the regex pattern for a valid URL. If not, return an error code 531.
 	const opened = window.open(link, '_blank'); // Open the link in a new tab using the window.open() function with the '_blank' target.
-    if (opened) return opened.focus(); // If the link was successfully opened in a new tab, focus on that tab.
+    if(opened) return opened.focus(); // If the link was successfully opened in a new tab, focus on that tab.
 	return alert("Ouverture d'onglet bloquée par le navigateur. Lien : "+link); // If the link opening is blocked by the browser, display an alert with the blocked link.
+}
+
+// This function formats the string to be displayed as French text and read by French users
+function format_fr(string){
+    string = string.replaceAll('_',' '); // Replace all underscores (_) with spaces (' ')
+    string = string.replaceAll('%27',"'"); // Replace all url-formatted single quotes (%27) to single quotes (')
+    string = string.charAt(0).toUpperCase() + string.slice(1); // Capitalize the first character
+    return string; // Return the formatted string
 }
