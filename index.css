@@ -67,7 +67,7 @@ form ion-icon{
 	filter: invert(100%);
 }
 
-.search-result{
+#search_results{
 	margin-top: 50px;
 	width: 100%;
 	display: grid;
@@ -109,7 +109,7 @@ form ion-icon{
 	justify-content: space-between;
 }
 
-.item .title{
+.item h2{
 	color: whitesmoke;
 	margin: 20px 10px 0 0;
 	font-size: 1.8rem;
