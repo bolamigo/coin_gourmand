@@ -28,6 +28,7 @@ Thumbs.db
 *~
 *.bak
 *.swp
+.Rhistory
 
 # Compiled source #
 ###################
