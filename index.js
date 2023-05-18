@@ -13,6 +13,7 @@ $(document).ready(function() {
         $(this).append(`<img src="image/${id}.jpg">`);
         $(this).append(`<div class='flex-container'><h2>${format_fr(id)}</h2></div>`);
         $(this).prop('title', format_fr(id));
+        // open in new tab
         $(this).click(function(){
             open_link_new_tab(`${window.location.href}recipe/${id}.html`); // open in new tab
         });
