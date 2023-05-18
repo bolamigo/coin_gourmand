@@ -2,6 +2,7 @@ const regex={
 	url:/^((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_àâçéèêëîïôùûü]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)$/,
 	mail:/^([a-z0-9_\.\+-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 };
+
 // This function returns the next element in the DOM hierarchy that matches the given selector
 function nextInDOM(_selector, _subject) {
     let next = getNext(_subject); // Get the next element after the subject element
@@ -34,10 +35,17 @@ function searchFor(_selector, _subject) {
 	return found; // Return the matching element, or null if no matching element is found
 }
 
+// This function alerts an error with its code to the user
+function error(error_code){
+    return alert(`Error ${error_code}.\nPlease contact the support at support@lena-cries.eu and provide them with the error code ${error_code}.`);
+}
+
 // This function opens a given link in a new browser tab
 function open_link_new_tab(link){
-	if(!link.match(regex.url)) return 'err 531'; // Check if the link matches the regex pattern for a valid URL. If not, return an error code 531.
-	const opened = window.open(link, '_blank'); // Open the link in a new tab using the window.open() function with the '_blank' target.
+	if(!link.match(regex.url)) // Check if the link matches the regex pattern for a valid URL.
+        return error(531); // If not, return an error code 531.
+
+    const opened = window.open(link, '_blank'); // Open the link in a new tab using the window.open() function with the '_blank' target.
     if(opened) return opened.focus(); // If the link was successfully opened in a new tab, focus on that tab.
 	return alert("Ouverture d'onglet bloquée par le navigateur. Lien : "+link); // If the link opening is blocked by the browser, display an alert with the blocked link.
 }
