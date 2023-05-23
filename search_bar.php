@@ -40,13 +40,13 @@ else $tab = [];
                 for ($i = 0; $i < count($tab); $i++) {
                     echo "<div class='item' id='".$tab[$i]["title"]."'></div>";
                 }
-                    if(!$valid){
-                        echo "<p id='no_result'>Caractères invalides."."<br>".
-                        "Caractères autorisés : lettres, chiffres, espace, lettre accentuées françaises, tiret, apostrophe, guillemets.</p>";
-                    }
-                    else if (count($tab) == 0) {
-                        echo "<p id='no_result'>Aucun résultat.</p>";
-                    }
+                if(!$valid){
+                    echo "<p id='no_result'>Caractères invalides."."<br>".
+                    "Caractères autorisés : lettres, chiffres, espace, lettre accentuées françaises, tiret, apostrophe, guillemets.</p>";
+                }
+                else if (count($tab) == 0) {
+                    echo "<p id='no_result'>Aucun résultat.</p>";
+                }
                 ?>
             </div>
 	</section>
