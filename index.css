@@ -140,3 +140,11 @@ form ion-icon {
 	letter-spacing: .05rem;
 	line-height: 2rem;
 }
+
+#no_result{
+    color: black;
+    background: rgba(255, 255, 255, .2);
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 0.2em;
+}

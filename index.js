@@ -1,5 +1,3 @@
-// TODO for each result (SQL), add an element with class "item" and id="<recipe.title>" (SQL, sans les espaces)
-
 // At page load
 $(document).ready(function() {
 	$('.item').each(function() {

@@ -16,7 +16,7 @@ $tab = $res->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recherche - Le Coin Gourmand</title>
-    <link rel="stylesheet" href="index.css?1">
+    <link rel="stylesheet" href="index.css?2">
 </head>
 <body>
 	<section>
@@ -29,12 +29,10 @@ $tab = $res->fetchAll();
 			<div id="search_results">
                 <?php
                 for ($i = 0; $i < count($tab); $i++) {
-                    echo "<div class='item' id='" .
-                        $tab[$i]["title"] .
-                        "'></div>";
+                    echo "<div class='item' id='".$tab[$i]["title"]."'></div>";
                 }
                 if (count($tab) == 0) {
-                    echo "<p>Aucun résultat.</p>";
+                    echo "<p id='no_result'>Aucun résultat.</p>";
                 }
                 ?>
             </div>
@@ -43,7 +41,7 @@ $tab = $res->fetchAll();
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/validate-js/2.0.1/validate.min.js" integrity="sha512-8GLIg5ayTvD6F9ML/cSRMD19nHqaLPWxISikfc5hsMJyX7Pm+IIbHlhBDY2slGisYLBqiVNVll+71CYDD5RBqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="functions.js?1"></script>
-    <script src="index.js?1"></script>
+    <script src="functions.js?2"></script>
+    <script src="index.js?2"></script>
 </body>
 </html>
