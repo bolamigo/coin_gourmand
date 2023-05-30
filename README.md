@@ -1,4 +1,4 @@
-# coin_gourmand
+# Coin Gourmand
 School project : recipes website
 
 # Tuto Git
