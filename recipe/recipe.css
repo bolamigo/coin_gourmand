@@ -1,0 +1,16 @@
+section {
+    padding : 50px 0; /* reduce the top padding */
+}
+
+#main_title { /* reduce the title size */
+    text-align: center;
+    font-size: 3rem;
+    color: whitesmoke;
+    margin-bottom: 30px;
+    margin-right: 2%;
+    display: inline-block;
+}
+
+#search_button {
+    display: inline-block;
+}
