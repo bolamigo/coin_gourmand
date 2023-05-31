@@ -2,11 +2,8 @@
 header('Content-type: text/html; charset=UTF-8');
 include "functions.php"; // Connect to the database.
 
-if(!isset($_GET['t'])){ // If there is no input
-	$recipe = search_recipe($conn, 'tarte_aux_pommes'); // display Apple Pie by default.
-}
-else {
-	$id = $_GET['t'];
+if (isset($_GET['r_id'])){
+	$id = $_GET['r_id'];
 	// Ensure the user input is coherent ('_' and no space) and avoid sql injection.
 	$valid = preg_match('/^[\w\pL\pMàâçéèêëîïôùûüÀÂÇÉÈÊËÎÏÔÙÛÜ\"\'\-]+$/', $id);
 	if($valid) {
@@ -15,9 +12,9 @@ else {
 			$valid = false; // Invalid if there is no result.
 		}
 	}
-	if(!$valid) { // Not "else" because valid can be set false in the if block.
-		$recipe = search_recipe($conn, 'tarte_aux_pommes'); // display Apple Pie by default.
-	}
+}
+if(!$valid or !isset($_GET['r_id'])) { // Not "else" because valid can be set false in the if block.
+	$recipe = search_recipe($conn, '4'); // display Apple Pie by default.
 }
 
 $recipe = $recipe[0]; // 1 result, simplify syntax.
@@ -37,7 +34,7 @@ $title = format_fr($recipe["title"]);
 <body>
 	<section>
 		<div class="container">
-			<h1 id="main_title"><?php echo $title?></h1> <div id="search_button"><ion-icon name="search"></ion-icon></div>
+			<h1 id="main_title"><?php echo $title?></h1> <div id="search_button"><ion-icon class="clickable" name="search"></ion-icon></div>
 			<h2>Recette</h2>
 		</div>
 	</section>

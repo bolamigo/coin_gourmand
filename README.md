@@ -37,9 +37,6 @@ Téléchargez **Git Bash** : https://gitforwindows.org/ et utilisez **toujours G
 > **git add \*** pour ajouter toutes vos modifications au commit
 * Créez un commit avec **git commit -m \<message\>**.
 **Le message doit contenir une brève description de vos modification**
+* publiez votre commit sur le repository avec **git push**. Faîtes-le souvent pour éviter les problèmes de merge conflicts.
 
-### En fin de session ou après une grosse étape
-
-* Faites un dernier commit
-* Publiez vos commits sur le repository avec **git push**
 **En cas de problème** comme un conflit par exemple, ne faîtes rien hâtivement, **on en parle** sur le discord

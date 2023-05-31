@@ -8,7 +8,7 @@ function format_fr($string) {
     return $string; // Return the formatted string.
 }
 
-// This function searches for a given id_recipe in the database and returnsthe unique result .
+// This function searches for a given id_recipe in the database and returns the unique result .
 function search_recipe($db, $query) {
 	var_dump($query);
 	$res = $db->prepare(

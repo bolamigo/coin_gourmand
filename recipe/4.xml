@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<recipe>
+	<ingredients>
+		<ingredient>
+			<id>1</id>
+			<amount>1</amount>
+		</ingredient>
+		<ingredient>
+			<id>2</id>
+			<amount>1</amount>
+		</ingredient>
+		<ingredient>
+			<id>3</id>
+			<amount>30</amount>
+		</ingredient>
+		<ingredient>
+			<id>4</id>
+			<amount>6</amount>
+		</ingredient>
+	</ingredients>
+	<ustensils>
+		<ustensil>
+			<id>1</id>
+			<amount>1</amount>
+		</ustensil>
+		<ustensil>
+			<id>2</id>
+			<amount>1</amount>
+		</ustensil>
+		<ustensil>
+			<id>3</id>
+			<amount>1</amount>
+		</ustensil>
+		<ustensil>
+			<id>4</id>
+			<amount>1</amount>
+		</ustensil>
+	</ustensils>
+	<preparation>
+		<step>Éplucher et découper en morceaux 4 pommes.</step>
+		<step>Mettre les morceaux dans une casserole avec un verre d'eau, à feu moyen.</step>
+		<step>Remuer continuellement jusqu'à ce que les pommes ramollissent.</step>
+		<step>Ajouter le sachet de sucre vanillé et un peu d'eau si nécessaire. Vous avez maintenant une compote.</step>
+		<step>Pendant la cuisson de la compote, éplucher et couper en quatre les 2 dernières pommes, puis en fines lamelles.</step>
+		<step>Préchauffer le four à 210°C (thermostat 7).</step>
+		<step>Étaler la pâte brisée dans un moule et la piquer avec une fourchette.</step>
+		<step>Verser la compote sur la pâte. Attention aux brûlures !.</step>
+		<step>Placer les lamelles de pommes en formant une spirale ou une forme de votre choix.</step>
+		<step>Placer de fines lamelles de beurre au dessus des pommes.</step>
+		<step>Enfourner et laisser cuire pendant 30 minutes au maximum. Surveiller la cuisson.</step>
+	</preparation>
+</recipe>
