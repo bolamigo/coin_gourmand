@@ -1,9 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <recipe>
-	<ingredients>
-	</ingredients>
-	<ustensils>
-	</ustensils>
-	<preparation>
-	</preparation>
+    <ingredients>
+        <ingredient>
+            <id>3</id>
+            <amount>60</amount>
+        </ingredient>
+        <ingredient>
+            <id>5</id>
+            <amount>250</amount>
+        </ingredient>
+        <ingredient>
+            <id>8</id>
+            <amount>5</amount>
+        </ingredient>
+        <ingredient>
+            <id>9</id>
+            <amount>1/2</amount>
+        </ingredient>
+        <ingredient>
+            <id>10</id>
+            <amount>3</amount>
+        </ingredient>
+        <ingredient>
+            <id>11</id>
+            <amount>50</amount>
+        </ingredient>
+    </ingredients>
+    <ustensils>
+        <ustensil>20</ustensil>
+        <ustensil>14</ustensil>
+        <ustensil>11</ustensil>
+        <ustensil>18</ustensil>
+        <ustensil>21</ustensil>
+        <ustensil>12</ustensil>
+        <ustensil>6</ustensil>
+        <ustensil>10</ustensil>
+    </ustensils>
+    <preparation>
+        <step>Il vous faut impérativement une petite poêle d'environ 10 cm de diamètre.</step>
+        <step>Préparer votre pâte à pancakes en mélangeant la farine, le sucre et le sel dans un saladier.</step>
+        <step>Faire un puits au milieu de la pâte.</step>
+        <step>Battre les oeufs séparément.</step>
+        <step>Faire fondre 30 g de beurre.</step>
+        <step>Verser les oeufs dans la pâte, avec le beurre et le lait.</step>
+        <step>Mélanger rapidement à la marise.</step>
+        <step>Laisser reposer la pâte à température ambiante pendant 45 minutes.</step>
+        <step>Beurrer légèrement la poêle avec le reste du beurre.</step>
+        <step>Faire chauffer le four à température basse, environ 60°C.</step>
+        <step>Faire chauffer la poêle à feu moyen.</step>
+        <step>Une fois la poêle chaude, Y déposer une petite louche de pâte.</step>
+        <step>Laisser cuire à feu moyen pendant 2 minutes.</step>
+        <step>Retourner à la marise et laisser 2 minutes de l'autre côté.</step>
+        <step>Retirer le pancake et le maintenir au chaud dans le four.</step>
+        <step>Répéter l'opération pour tous les pancakes.</step>
+        <step>À votre convenance, servir arrosé de sirop d'érable, avec de la chantilly ou des fruits rouges.</step>
+    </preparation>
 </recipe>
