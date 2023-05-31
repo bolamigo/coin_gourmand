@@ -10,7 +10,6 @@ function format_fr($string) {
 
 // This function searches for a given id_recipe in the database and returns the unique result .
 function search_recipe($db, $query) {
-	var_dump($query);
 	$res = $db->prepare(
         "SELECT * FROM recipe WHERE id = :query ;"
     );
