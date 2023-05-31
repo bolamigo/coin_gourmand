@@ -19,22 +19,16 @@
 		</ingredient>
 	</ingredients>
 	<ustensils>
-		<ustensil>
-			<id>1</id>
-			<amount>1</amount>
-		</ustensil>
-		<ustensil>
-			<id>2</id>
-			<amount>1</amount>
-		</ustensil>
-		<ustensil>
-			<id>3</id>
-			<amount>1</amount>
-		</ustensil>
-		<ustensil>
-			<id>4</id>
-			<amount>1</amount>
-		</ustensil>
+		<ustensil>1</ustensil>
+		<ustensil>2</ustensil>
+		<ustensil>3</ustensil>
+		<ustensil>4</ustensil>
+		<ustensil>5</ustensil>
+		<ustensil>6</ustensil>
+		<ustensil>7</ustensil>
+		<ustensil>8</ustensil>
+		<ustensil>9</ustensil>
+		<ustensil>10</ustensil>
 	</ustensils>
 	<preparation>
 		<step>Éplucher et découper en morceaux 4 pommes.</step>

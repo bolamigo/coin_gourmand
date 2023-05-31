@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<recipe>
+	<ingredients>
+		<ingredient>
+			<id>5</id>
+			<amount>625</amount>
+		</ingredient>
+		<ingredient>
+			<id>3</id>
+			<amount>75</amount>
+		</ingredient>
+		<ingredient>
+			<id>6</id>
+			<amount>100</amount>
+		</ingredient>
+		<ingredient>
+			<id>7</id>
+			<amount>2</amount>
+		</ingredient>
+		<ingredient>
+			<id>8</id>
+			<amount>100</amount>
+		</ingredient>
+		<ingredient>
+			<id>9</id>
+			<amount>1</amount>
+		</ingredient>
+		<ingredient>
+			<id>10</id>
+			<amount>2</amount>
+		</ingredient>
+		<ingredient>
+			<id>11</id>
+			<amount>35</amount>
+		</ingredient>
+	</ingredients>
+	<ustensils>
+		<ustensil>11</ustensil>
+		<ustensil>5</ustensil>
+		<ustensil>6</ustensil>
+		<ustensil>2</ustensil>
+		<ustensil>4</ustensil>
+		<ustensil>12</ustensil>
+		<ustensil>10</ustensil>
+		<ustensil>13</ustensil>
+	</ustensils>
+	<preparation>
+		<step>Dans le saladier, mélanger la levure, le lait, le sucre, le sel, les oeufs, le beurre et environ la moitié de la farine.</step>
+		<step>Travailler l'appareil pendant 5 minutes avec une cuillère en bois.</step>
+		<step>Incorporer le reste de la farine peu à peu.</step>
+		<step>Pétrir la pâte hors du saladier jusqu'à ce que la pâte soit homogène et élastique (environ 5 minutes).</step>
+		<step>Transférer la pâte dans le saladier et le couvrir d'un linge humide.</step>
+		<step>Laisser lever la pâte pendant 1 heure à température ambiante. Il est également possible de la laisser lever pendant plusieurs heures au réfrigérateur.</step>
+		<step>Placer la boule de pâte sur une surface farinée et l'étendre pour obtenir un disque d'une épaisseur de 1 cm.</step>
+		<step>Détailler les donuts avec un emporte-pièce rond et faire un trou au milieu.</step>
+		<step>Laisser les donuts reposer 45 minutes à température ambiante, leur volume devrait doubler. Les placer sur un torchon légèrement fariné pour éviter qu'ils collent.</step>
+		<step>Faire chauffer 1 litre d'huile dans une grande casserole à 175°C environ.</step>
+		<step>Faire frire les donuts environ 45 secondes de chaque côté.</step>
+		<step>À votre convenance, sucrer, glacer ou fourrer les donuts.</step>
+	</preparation>
+</recipe>
