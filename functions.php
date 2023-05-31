@@ -11,7 +11,6 @@ function format_fr($string) {
 // This function searches for a given recipe in the database and returns the first result in a fields tab.
 function search_recipe($db, $query) {
 	// Get the recipe info, take the first result. Should be only 1.
-	var_dump($query);
 	$res = $db->prepare(
         "SELECT * FROM recipe WHERE title = :query LIMIT 1;"
     );
