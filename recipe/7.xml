@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<recipe>
+	<ingredients>
+		<ingredient>
+			<id>12</id>
+			<amount>100</amount>
+		</ingredient>
+		<ingredient>
+			<id>13</id>
+			<amount>70</amount>
+		</ingredient>
+		<ingredient>
+			<id>14</id>
+			<amount>400</amount>
+		</ingredient>
+		<ingredient>
+			<id>15</id>
+			<amount>500</amount>
+        </ingredient>
+		<ingredient>
+			<id>5</id>
+			<amount>400</amount>
+		</ingredient>
+		<ingredient>
+			<id>8</id>
+			<amount>400</amount>
+		</ingredient>
+		<ingredient>
+			<id>3</id>
+			<amount>200</amount>
+		</ingredient>
+		<ingredient>
+			<id>2</id>
+			<amount>1</amount>
+		</ingredient>
+		<ingredient>
+			<id>16</id>
+			<amount>1</amount>
+		</ingredient>
+		<ingredient>
+			<id>17</id>
+			<amount>100</amount>
+		</ingredient>
+		<ingredient>
+			<id>18</id>
+			<amount>6</amount>
+		</ingredient>
+		<ingredient>
+			<id>10</id>
+			<amount>6</amount>
+		</ingredient>
+		<ingredient>
+			<id>11</id>
+			<amount>10</amount>
+		</ingredient>
+	</ingredients>
+	<ustensils>
+		<ustensil>11</ustensil>
+		<ustensil>14</ustensil>
+		<ustensil>15</ustensil>
+		<ustensil>16</ustensil>
+		<ustensil>5</ustensil>
+		<ustensil>17</ustensil>
+		<ustensil>6</ustensil>
+		<ustensil>10</ustensil>
+		<ustensil>18</ustensil>
+		<ustensil>19</ustensil>
+	</ustensils>
+	<preparation>
+		<step>Battre les oeufs avec le sucre pour obtenir un mélange bien mousseux.</step>
+		<step>Rajouter le beurre fondu puis mélanger.</step>
+		<step>Rajouter le sucre vanillé, la levure puis la farine.</step>
+		<step>Bien mélanger pour obtenir une pâte lisse.</step>
+		<step>Ajouter 20 cl de crème, la noix de coco râpée, le lait et mélanger.</step>
+		<step>Peser la pâte et diviser en 6 parts égales pour faire 6 petites génoises ( 250 gr par génoise environ).</step>
+		<step>Prendre la pâte pour la première génoise et y mélanger 3 gouttes de colorant.</step>
+		<step>Verser la pâte dans un moule à génoise.</step>
+		<step>Enfourner 10min à 180°C (thermostat 6).</step>
+		<step>Répéter l'opération 6 fois pour obtenir les 6 génoises. Si votre matériel vous le permet, il est possible de cuire les génoises 2 par 2.</step>
+		<step>Faire fondre le chocolat blanc et le laisser refroidir.</step>
+        <step>Fouetter le mascarpone et rajouter le chocolat blanc.</step>
+		<step>Battre pendant plusieurs minutes pour obtenir un glaçage.</step>
+		<step>Prendre la première génoise et ajouter une couche de glaçage, recouvrir de la deuxième génoise et d'une autre couche de glaçage.</step>
+		<step>Reproduire l'opération avec les 6 génoises, puis bien lisser sur le dessus et sur les côtés.</step>
+		<step>Réserver au frais.</step>
+		<step>Verser le reste de la crème dans un plat bien froid.</step>
+		<step>La battre et y ajouter le sucre glace pour obtenir une crème épaisse.</step>
+		<step>Recouvrir tout le gâteau avec la crème chantilly en lissant bien.</step>
+		<step>Recouvrir de noix de coco râpée ou de bonbons multicolores comme des M&M's ou Skittles si vous le souhaitez.</step>
+	</preparation>
+</recipe>
