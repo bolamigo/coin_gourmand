@@ -37,7 +37,7 @@ $title = format_fr($recipe["title"]);
 <body>
 	<section>
 		<div class="container">
-			<h1 id="main_title"><?php echo $title?></h1> <div id="search_button"><ion-icon name="search"></ion-icon></div>
+			<h1 id="main_title"><?php echo $title?></h1> <div id="search_button"><ion-icon class="clickable" name="search"></ion-icon></div>
 			<h2>Recette</h2>
 		</div>
 	</section>

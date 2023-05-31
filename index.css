@@ -17,6 +17,10 @@ html {
 	font-weight: 600;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
 section {
 	min-height: 100vh;
 	width: 100%;
