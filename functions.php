@@ -8,12 +8,11 @@ function format_fr($string) {
     return $string; // Return the formatted string.
 }
 
-// This function searches for a given recipe in the database and returns the first result in a fields tab.
+// This function searches for a given id_recipe in the database and returnsthe unique result .
 function search_recipe($db, $query) {
-	// Get the recipe info, take the first result. Should be only 1.
 	var_dump($query);
 	$res = $db->prepare(
-        "SELECT * FROM recipe WHERE title = :query LIMIT 1;"
+        "SELECT * FROM recipe WHERE id = :query ;"
     );
     $res->bindParam(':query', $query);
 	$res->setFetchMode(PDO::FETCH_ASSOC);
@@ -22,3 +21,5 @@ function search_recipe($db, $query) {
 	return $tab;
 }
 ?>
+
+

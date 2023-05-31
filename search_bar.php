@@ -10,13 +10,14 @@ function strtosqlregex($string){
 if($valid) {
     $keywords_regex = strtosqlregex($keywords); // format the keywords for sql regex
     $res = $conn->prepare(
-        "SELECT title FROM recipe WHERE title LIKE '%$keywords_regex%';" // find corresponding recipes
+        "SELECT id, title, author FROM recipe WHERE title LIKE '%$keywords_regex%';" // find corresponding recipes
     );
     $res->setFetchMode(PDO::FETCH_ASSOC);
     $res->execute();
     $tab = $res->fetchAll(); // put results in a table
 }
 else $tab = [];
+// TODO get image id from table media
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +39,7 @@ else $tab = [];
 			<div id="search_results">
                 <?php
                 for ($i = 0; $i < count($tab); $i++) {
-                    echo "<div class='item' id='".$tab[$i]["title"]."'></div>";
+                    echo "<div class='item' id='" . $tab[$i]["id"] . "' data-title='" . $tab[$i]["title"] . "' data-author='" . $tab[$i]["author"] . "'></div>";
                 }
                 if(!$valid){
                     echo "<p id='no_result'>Caractères invalides."."<br>".
