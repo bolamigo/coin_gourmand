@@ -14,7 +14,6 @@ $(document).ready(function() {
 		$(this).append(`<div class='flex-container'><h2>${format_fr(title)}</h2></div>`);
 		$(this).prop('title', format_fr(title));
 		$(this).click(function() { // When user clicks on the recipe (either image or title)
-			console.log(id);
 			open_link_new_tab(`${window.location.href}recipe.php?r_id=${id}`); // Open the recipe page in a new tab
 		});
 	})
