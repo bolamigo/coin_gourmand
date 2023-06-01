@@ -131,17 +131,29 @@ div.item {
 	object-fit: cover;
 }
 
-.item.flex-container {
-	display: flex;
+.flex-container {
+  display: flex;
+  width: 90%;
 	align-items: center;
-	justify-content: space-between;
+  justify-content: space-between;
 }
 
 .item h2 {
-	color: whitesmoke;
-	margin: 20px 10px 0 0;
-	font-size: 1.8rem;
-	font-weight: 400;
+  color: whitesmoke;
+  max-width: 67%;
+  overflow-wrap: break-word;
+  margin: 10px;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.item h3 {
+  color: whitesmoke;
+  max-width: 33%;
+  overflow-wrap: break-word;
+  margin: 10px;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 .view-button {

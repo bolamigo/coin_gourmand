@@ -7,12 +7,15 @@ $(document).ready(function() {
 		// get item id and other data
 		const id = $(this).attr('id');
 		const title = $(this).attr('data-title');
-		const author = $(this).attr('data-author');//TODO show author name
+		const author = $(this).attr('data-author');
 
 		// search results are DIVs, auto-generate img, title & link with id
 		if($(this)[0].tagName === 'DIV') {
 			$(this).append(`<img src="recipe/image/${id}.jpg">`);
-			$(this).append(`<div class='flex-container'><h2>${format_fr(title)}</h2></div>`);
+			$(this).append(`<div class='flex-container'>`+
+				`<h2>${format_fr(title)}</h2>`+
+				`<h3>${author}</h3>`+
+			`</div>`);
 		}
 		$(this).prop('title', format_fr(title));
 		$(this).click(function() { // When user clicks on the recipe (either image or title)

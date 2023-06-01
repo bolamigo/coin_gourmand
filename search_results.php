@@ -10,7 +10,7 @@ function strtosqlregex($string){
 if($valid) {
     $keywords_regex = strtosqlregex($keywords); // format the keywords for sql regex
     $res = $conn->prepare(
-        "SELECT id, title, author FROM recipe WHERE title LIKE '%$keywords_regex%';" // find corresponding recipes
+        "SELECT r.id as id, title, nickname as author FROM recipe r JOIN user u ON u.id = r.author WHERE r.title LIKE '%$keywords_regex%';" // find corresponding recipes
     );
     $res->setFetchMode(PDO::FETCH_ASSOC);
     $res->execute();
@@ -32,7 +32,7 @@ else $tab = [];
 	<section>
 		<div class="container">
 			<h1 id="main_title">Résultats de recherche</h1>
-			<form action="search_bar.php" method="get">
+			<form action="search_results.php" method="get">
 				<input type="text" name="keywords" value="<?php echo str_replace('"', '&quot;', $keywords); ?>" required>
 				<ion-icon name="search"></ion-icon>
 			</form>

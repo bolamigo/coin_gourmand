@@ -12,7 +12,7 @@ include "functions.php";
 <body>
 	<header id="header">
 		<h1 id="main_title">Le Coin Gourmand</h1>
-		<form action="search_bar.php" method="get">
+		<form action="search_results.php" method="get">
 				<input type="text" name="keywords" placeholder="Rechercher une recette..." required>
 				<ion-icon name="search"></ion-icon>
 			</form>
@@ -44,25 +44,6 @@ include "functions.php";
 			?>
 		</div>
 	</header>
-
-
-	<!-- <section>
-		<div class="container">
-			<h1 id="main_title">Le Coin Gourmand</h1>
-			<form action="search_bar.php" method="get">
-				<input type="text" name="keywords" placeholder="Rechercher une recette..." required>
-				<ion-icon name="search"></ion-icon>
-			</form>
-			<div id="search_results">
-				<div class="item" id='4' data-title='tarte_aux_pommes'></div>
-				<div class="item" id='5' data-title='donuts'></div>
-				<div class="item" id='7' data-title='gâteau_arc-en-ciel'></div>
-				<div class="item" id='8' data-title='pancakes'></div>
-			</div>
-		</div>
-	</section>
-	-->
-
 
 	<div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
 	  <img class="item image" id='4' src="recipe/image/4.jpg" draggable="false" data-title='tarte_aux_pommes'/>
