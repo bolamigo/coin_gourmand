@@ -60,6 +60,18 @@ function get_media($id) {
 	return $tab[0];
 }
 
+// This function gets all the comments on a given recipe.
+function get_recipe_comments($recipe_id) {
+    global $conn;
+	$res = $conn->prepare(
+        "SELECT u.nickname, c.content, c.date, c.parent, c.id FROM comment c INNER JOIN user u ON c.user = u.id WHERE recipe = $recipe_id ORDER BY parent, date;"
+    );
+	$res->setFetchMode(PDO::FETCH_ASSOC);
+	$res->execute();
+	$tab = $res->fetchAll();
+	return $tab;
+}
+
 // Utility function for debug, displays the content of a variable
 function echovar($var) {
     echo "<pre>"; // <pre> tag is used to display tables with multiple lines
