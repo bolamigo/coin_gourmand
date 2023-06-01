@@ -1,6 +1,5 @@
 <?php
-// Connexion à la base de données
-include 'sql.php';
+include 'functions.php';
 
 try {
 
@@ -15,18 +14,17 @@ try {
   $user = $stmt->fetch();
 
   // Vérifier si l'utilisateur a été trouvé et si le mot de passe est correct
-  if ($user && password_verify($password, $user["password_hash"])) {
+  if ($user && password_verify($password, $user["password"])) {
     // Les informations d'identification sont valides, démarrer une session
     session_start();
     $_SESSION["user_id"] = $user["id"];
     $_SESSION["user_email"] = $user["email"];
-    echo "Vous êtes maintenant connecté !";
   } else {
     // Les informations d'identification sont incorrectes
-    echo "Adresse email ou mot de passe incorrect !";
+    alert("Adresse email ou mot de passe incorrect !");
   }
 } catch(PDOException $e) {
-  echo "Erreur : " . $e->getMessage();
+  alert("Erreur : " . $e->getMessage());
 }
 
 // Fonction utilitaire pour nettoyer les données d'entrée
