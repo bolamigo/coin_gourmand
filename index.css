@@ -73,7 +73,7 @@ form {
 	border-radius: 4px;
 }
 
-form input {
+header form input {
 	width: 90%;
 	background-color: transparent;
 	padding: 10px;
@@ -199,10 +199,10 @@ div.item {
 }
 
 .glow-on-hover {
-    width: 220px;
+    width: 200px;
     height: 50px;
+    margin: 10px;
     border: none;
-    outline: none;
     color: #fff;
     background: #111;
     cursor: pointer;
