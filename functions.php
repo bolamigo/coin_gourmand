@@ -66,4 +66,9 @@ function echovar($var) {
     print_r($var);
     echo "</pre>";
 }
+
+// This function creates JS alerts in PHP
+function alert($msg) {
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
 ?>
