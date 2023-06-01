@@ -87,15 +87,16 @@ function login() {
         xhr.open(form.method, form.action, true); // Configurer la requête
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); // Configurer l'en-tête HTTP
         xhr.onload = function() {
-        if (xhr.status === 200) { // Vérifier si la requête s'est terminée avec succès
-            alert(xhr.responseText); // Afficher la réponse du serveur
-        } else {
-            alert("Erreur lors de la connexion !");
-        }
+            if (xhr.status === 200) { // Vérifier si la requête s'est terminée avec succès
+                alert(xhr.responseText); // Afficher la réponse du serveur
+            } else {
+                alert("Erreur lors de la connexion !");
+            }
         };
         xhr.onerror = function() {
             alert("Erreur réseau !");
         };
         xhr.send(new URLSearchParams(data)); // Envoyer les données du formulaire
+        window.location.href = "https://bolamigo.fr/coin_gourmand/"; // Redirection to homepage
     });
 }
