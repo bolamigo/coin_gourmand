@@ -114,7 +114,7 @@ form ion-icon {
 	cursor: pointer;
 }
 
-.item {
+div.item {
 	max-width: 666px;
 	border-radius: 8px;
 	background-color: rgb(37, 37, 37);

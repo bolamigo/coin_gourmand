@@ -24,7 +24,7 @@ include "functions.php";
 							$_COOKIE["user_id"].
 						"</button>".
 					"</a>";
-				// TODO onclick disconnect
+				// TODO onclick disconnect, destroy cookie
 				echo "<button class='glow-on-hover' type='button'>".
 						"Se déconnecter".
 					"</button>";
@@ -65,10 +65,10 @@ include "functions.php";
 
 
 	<div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-	  <img class="image" src="recipe/image/4.jpg" draggable="false" />
-	  <img class="image" src="recipe/image/5.jpg" draggable="false" />
-	  <img class="image" src="recipe/image/7.jpg" draggable="false" />
-	  <img class="image" src="recipe/image/8.jpg" draggable="false" />
+	  <img class="item image" id='4' src="recipe/image/4.jpg" draggable="false" data-title='tarte_aux_pommes'/>
+	  <img class="item image" id='5' src="recipe/image/5.jpg" draggable="false" data-title='donuts'/>
+	  <img class="item image" id='7' src="recipe/image/7.jpg" draggable="false" data-title='gâteau_arc-en-ciel'/>
+	  <img class="item image" id='8' src="recipe/image/8.jpg" draggable="false" data-title='pancakes'/>
     </div>
 	<script src="defilleImage.js"></script>
 
