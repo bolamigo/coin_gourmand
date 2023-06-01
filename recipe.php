@@ -94,8 +94,9 @@ while($recipe_xml->read()) { // Go through the XML tree
 			?>
 			<h2>Préparation</h2>
 			<?php
+				$step_number = 0;
 				foreach ($steps as $step) {
-					echo "<div class='step'>$step</div>"; // TODO formatting
+					echo "<div class='step'>".++$step_number." - $step</div>"; // TODO formatting
 				}
 			?>
 		</div>
