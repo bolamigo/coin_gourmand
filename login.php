@@ -26,13 +26,5 @@ try {
 } catch(PDOException $e) {
   alert("Erreur : " . $e->getMessage());
 }
-
-// Fonction utilitaire pour nettoyer les données d'entrée
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
 ?>
 

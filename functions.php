@@ -67,7 +67,15 @@ function echovar($var) {
     echo "</pre>";
 }
 
-// This function creates JS alerts in PHP
+// Fonction utilitaire pour nettoyer les données d'entrée
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+// This function creates a JS alert in PHP
 function alert($msg) {
     echo "<script type='text/javascript'>alert('$msg');</script>";
 }
