@@ -11,7 +11,7 @@ include "functions.php";
 </head>
 <body>
 	<header id="header">
-		<h1 id="main_title">Le Coin Gourmand</h1>
+		<h1 id="main_title" class="unselectable">Le Coin Gourmand</h1>
 		<form action="search_results.php" method="get">
 				<input type="text" name="keywords" placeholder="Rechercher une recette..." required>
 				<ion-icon name="search"></ion-icon>
@@ -20,23 +20,23 @@ include "functions.php";
 			<?php
 			if ($_COOKIE["user_id"]) {
 				echo "<a href='profile.php'>".
-						"<button class='glow-on-hover' type='button'>".
+						"<button class='unselectable glow-on-hover' type='button'>".
 							$_COOKIE["user_id"].
 						"</button>".
 					"</a>";
 				// TODO onclick disconnect, destroy cookie
-				echo "<button class='glow-on-hover' type='button'>".
+				echo "<button class='unselectable glow-on-hover' type='button'>".
 						"Se déconnecter".
 					"</button>";
 			}
 			else {
 				echo "<a href='page_login.html'>".
-						"<button class='glow-on-hover' type='button'>".
+						"<button class='unselectable glow-on-hover' type='button'>".
 							"Se connecter".
 						"</button>".
 					"</a>";
 				echo "<a href='page_inscription.html'>".
-						"<button class='glow-on-hover' type='button'>".
+						"<button class='unselectable glow-on-hover' type='button'>".
 							"S'inscrire".
 						"</button>".
 					"</a>";
@@ -55,7 +55,7 @@ include "functions.php";
 
 	<section>
 	<div class="container">
-		<h1 id="slogan">"Succombez aux délices en souriant : votre site, l'épicurieux de la cuisine !"</h1>
+		<h1 id="slogan" class="unselectable">Succombez au délice : salé ou sucré, enchantez vos sens et égayez vos journées</h1>
 	</div>
 	</section>
 
