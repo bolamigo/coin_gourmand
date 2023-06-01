@@ -47,7 +47,7 @@ function error(error_code) {
 // This function opens a given link in a new browser tab
 function open_link_new_tab(link) {
 	if (!link.match(regex.url)) // Check if the link matches the regex pattern for a valid URL.
-		return error(531); // If not, return an error code 531.
+		return error(531); // If not, return an error code 531. Error is hidden because it's a code error.
 
 	const opened = window.open(link, '_blank'); // Open the link in a new tab using the window.open() function with the '_blank' target.
 	if (opened) return opened.focus(); // If the link was successfully opened in a new tab, focus on that tab.
@@ -61,41 +61,41 @@ function format_fr(string) {
 	string = string.charAt(0).toUpperCase() + string.slice(1); // Capitalize the first character
 	return string; // Return the formatted string
 }
+
 function inscription() {
-  // Récupérer les valeurs des champs email, password et confirmPassword
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
-  var confirmPassword = document.getElementById("confirmPassword").value;
+	// Récupérer les valeurs des champs email, password et confirmPassword
+	let email = document.getElementById("email").value;
+	let password = document.getElementById("password").value;
+	let confirmPassword = document.getElementById("confirmPassword").value;
 
-  // Vérifier si les champs ne sont pas vides et que les mots de passe correspondent
-  if (email && password && confirmPassword && password === confirmPassword) {
-    // Créer une instance de XMLHttpRequest
-    
-  } else {
-    alert("Veuillez remplir tous les champs et vérifier que les mots de passe correspondent.");
-  }
+	// Vérifier si les champs ne sont pas vides et que les mots de passe correspondent
+	if (email && password && confirmPassword && password === confirmPassword) {
+		// Créer une instance de XMLHttpRequest
+
+	} else {
+		alert("Veuillez remplir tous les champs et vérifier que les mots de passe correspondent.");
+	}
 }
-
 
 function login() {
     // Récupérer le formulaire et écouter l'événement submit
     const form = document.getElementById("login-form");
     form.addEventListener("submit", function(event) {
-      event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
-      const data = new FormData(form); // Récupérer les données du formulaire
-      const xhr = new XMLHttpRequest(); // Créer une requête AJAX
-      xhr.open(form.method, form.action, true); // Configurer la requête
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); // Configurer l'en-tête HTTP
-      xhr.onload = function() {
+        event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
+        const data = new FormData(form); // Récupérer les données du formulaire
+        const xhr = new XMLHttpRequest(); // Créer une requête AJAX
+        xhr.open(form.method, form.action, true); // Configurer la requête
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); // Configurer l'en-tête HTTP
+        xhr.onload = function() {
         if (xhr.status === 200) { // Vérifier si la requête s'est terminée avec succès
-          alert(xhr.responseText); // Afficher la réponse du serveur
+            alert(xhr.responseText); // Afficher la réponse du serveur
         } else {
-          alert("Erreur lors de la connexion !");
+            alert("Erreur lors de la connexion !");
         }
-      };
-      xhr.onerror = function() {
-        alert("Erreur réseau !");
-      };
-      xhr.send(new URLSearchParams(data)); // Envoyer les données du formulaire
+        };
+        xhr.onerror = function() {
+            alert("Erreur réseau !");
+        };
+        xhr.send(new URLSearchParams(data)); // Envoyer les données du formulaire
     });
 }
