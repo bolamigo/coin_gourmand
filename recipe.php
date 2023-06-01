@@ -9,16 +9,12 @@ if (isset($_GET['r_id'])){
 		$recipe_db = search_recipe($id);
 		if(count($recipe_db) == 0)
 			$valid_query = false; // Invalid if there is no result.
+		else
+			$recipe_xml = XMLReader::open("recipe/$id.xml");
 	}
 }
 
-if(!$valid_query || !isset($_GET['r_id'])) {
-	$id = 4;
-	$recipe_db = search_recipe($id); // display Apple Pie by default.
-}
-
-$recipe_xml = XMLReader::open("recipe/$id.xml");
-if(!$recipe_xml){ // File not found
+if(!$valid_query || !isset($_GET['r_id']) || !$recipe_xml) {
 	$id = 4;
 	$recipe_db = search_recipe($id); // display Apple Pie by default.
 	$recipe_xml = XMLReader::open("recipe/$id.xml");
