@@ -78,7 +78,7 @@ while($recipe_xml->read()) { // Go through the XML tree
 					$unit = $ingredient['unit'] ?? '';
 					$image = get_media($ingredient['media_id']) ?? '';
 
-					echo "<div class='ingredient'>$name : $value $unit</div>"; // TODO formatting + image
+					echo "<div class='ingredient'>$name : $value $unit</div>"; // TODO formatting
 
 					next($ingredients_values);
 				}
@@ -90,7 +90,7 @@ while($recipe_xml->read()) { // Go through the XML tree
 					$name = $ustensil['name'];
 					$image = get_media($ustensil['media_id']) ?? '';
 
-					echo "<div class='ustensil'>$name</div>"; // TODO formatting + image
+					echo "<div class='ustensil'>$name</div>"; // TODO formatting
 				}
 			?>
 			<h2>Préparation</h2>
@@ -104,17 +104,34 @@ while($recipe_xml->read()) { // Go through the XML tree
 			<?php
 				$comments = get_recipe_comments($id);
 				foreach($comments as $comment) {
-					echo "<div class='comment'>".
-							"<span class='user'>".
-								$comment['nickname'].
-							"</span>".
-							"<span class='date'>".
-								$comment['date'].
-							"</span>".
-							"<span class='content'>".
-								$comment['content'].
-							"</span>".
-						"</div>";
+					if(!$comment['parent']) {
+						echo "<div class='comment' id='" . $comment['id'] . "'>".
+								"<span class='user'>".
+									$comment['nickname'].
+								"</span>".
+								"<span class='date'>".
+									$comment['date'].
+								"</span>".
+								"<span class='content'>".
+									$comment['content'].
+								"</span>";
+						foreach($comments as $child) {
+							if(($child['parent'] ?? 0) == $comment['id']) {
+								echo "<div class='child' id='" . $child['id'] . "'>".
+										"<span class='user'>".
+											$child['nickname'].
+										"</span>".
+										"<span class='date'>".
+											$child['date'].
+										"</span>".
+										"<span class='content'>".
+											$child['content'].
+										"</span>".
+									"</div>";
+							}
+						}
+						echo "</div>";
+					}
 				}
 			?>
 		</div>

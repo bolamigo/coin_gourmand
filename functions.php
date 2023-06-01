@@ -64,7 +64,7 @@ function get_media($id) {
 function get_recipe_comments($recipe_id) {
     global $conn;
 	$res = $conn->prepare(
-        "SELECT u.nickname, c.content, c.date, c.parent FROM comment c INNER JOIN user u ON c.user = u.id WHERE recipe = $recipe_id ORDER BY parent, date;"
+        "SELECT u.nickname, c.content, c.date, c.parent, c.id FROM comment c INNER JOIN user u ON c.user = u.id WHERE recipe = $recipe_id ORDER BY parent, date;"
     );
 	$res->setFetchMode(PDO::FETCH_ASSOC);
 	$res->execute();
