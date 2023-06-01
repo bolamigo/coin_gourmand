@@ -50,6 +50,7 @@ while($recipe_xml->read()) { // Go through the XML tree
 			array_push($steps, $recipe_xml->readString());
 	}
 }
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
@@ -97,6 +98,23 @@ while($recipe_xml->read()) { // Go through the XML tree
 				$step_number = 0;
 				foreach ($steps as $step) {
 					echo "<div class='step'>".++$step_number." - $step</div>"; // TODO formatting
+				}
+			?>
+			<h2>Commentaires</h2>
+			<?php
+				$comments = get_recipe_comments($id);
+				foreach($comments as $comment) {
+					echo "<div class='comment'>".
+							"<span class='user'>".
+								$comment['nickname'].
+							"</span>".
+							"<span class='date'>".
+								$comment['date'].
+							"</span>".
+							"<span class='content'>".
+								$comment['content'].
+							"</span>".
+						"</div>";
 				}
 			?>
 		</div>
