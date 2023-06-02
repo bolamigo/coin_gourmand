@@ -184,3 +184,23 @@ h2:after {
     color: black;
     font-size: 250%;
 }
+
+.comment {
+    color: whitesmoke;
+    font-size: 1.25em;
+    width: 80%;
+    border-radius: 8px;
+    background-color: rgb(37, 37, 37);
+    padding: 15px;
+    margin-bottom: 16px;
+}
+
+.child {
+    margin-left: 32px;
+    font-size: .8em;
+}
+
+.date {
+    font-size: .75em;
+    font-weight: 400;
+}

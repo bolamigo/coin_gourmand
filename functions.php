@@ -8,6 +8,60 @@ function format_fr($string) {
     return $string; // Return the formatted string.
 }
 
+// This function formats the sql datetime for a french sentence.
+function datetime_fr($datetime) {
+
+    $year = substr($datetime, 0, 4);
+
+    switch(substr($datetime, 5, 2)){
+        case '01':
+            $month = 'janvier';
+            break;
+        case '02':
+            $month = 'février';
+            break;
+        case '03':
+            $month = 'mars';
+            break;
+        case '04':
+            $month = 'avril';
+            break;
+        case '05':
+            $month = 'mai';
+            break;
+        case '06':
+            $month = 'juin';
+            break;
+        case '07':
+            $month = 'juillet';
+            break;
+        case '08':
+            $month = 'août';
+            break;
+        case '09':
+            $month = 'septembre';
+            break;
+        case '10':
+            $month = 'octobre';
+            break;
+        case '11':
+            $month = 'novembre';
+            break;
+        case '12':
+            $month = 'décembre';
+    }
+
+    $day = ltrim(substr($datetime, 8, 2), "0");
+    if($day == '1')
+        $day .= '<sup>er</sup>';
+
+    $hour = substr($datetime, 11, 2);
+    $minute = substr($datetime, 14, 2);
+    $second = substr($datetime, 17, 2);
+
+    return "le $day $month $year à $hour h $minute et $second s.";
+}
+
 // This function searches for a given recipe ID in the database and returns the unique result.
 function search_recipe($id) {
     global $conn;

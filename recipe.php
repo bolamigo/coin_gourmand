@@ -124,7 +124,7 @@ while($recipe_xml->read()) { // Go through the XML tree
 									$comment['nickname'].
 								"</span>".
 								"<span class='date'>".
-									$comment['date'].
+								" - " . datetime_fr($comment['date']) . "&nbsp;: " .
 								"</span>".
 								"<span class='content'>".
 									$comment['content'].
@@ -136,7 +136,7 @@ while($recipe_xml->read()) { // Go through the XML tree
 											$child['nickname'].
 										"</span>".
 										"<span class='date'>".
-											$child['date'].
+											" - " . datetime_fr($child['date']) . "&nbsp;: " .
 										"</span>".
 										"<span class='content'>".
 											$child['content'].
