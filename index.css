@@ -133,10 +133,6 @@ form ion-icon {
 	object-fit: cover;
 }
 
-.clickable {
-	cursor: pointer;
-}
-
 div.item {
 	max-width: 666px;
 	border-radius: 8px;
@@ -304,6 +300,35 @@ body {
   height: 56vmin;
   object-fit: cover;
   object-position: 100% center;
+}
+
+@media (max-width: 1250px) {
+  #new_recipe_button {
+    position: absolute;
+    left: 70%;
+    top: 621px;
+  }
+}
+@media (max-width: 840px) {
+  #new_recipe_button {
+    position: absolute;
+    left: 75%;
+    top: 621px;
+  }
+}
+@media (max-width: 739px) {
+  #new_recipe_button {
+    position: absolute;
+    left: 80%;
+    top: 678px;
+  }
+}
+@media (min-width: 1251px) {
+  #new_recipe_button {
+    position: absolute;
+    left: 65%;
+    top: 543px;
+  }
 }
 
 /* -- YouTube Link Styles -- */
