@@ -1,5 +1,6 @@
 <?php
 include "functions.php";
+$xml = new XMLReader;
 
 if (isset($_GET['r_id'])){
 	$id = $_GET['r_id'];
@@ -10,14 +11,28 @@ if (isset($_GET['r_id'])){
 		if(count($recipe_db) == 0)
 			$valid_query = false; // Invalid if there is no result.
 		else
-			$recipe_xml = XMLReader::open("recipe/$id.xml");
+			$xml->open("recipe/$id.xml");
 	}
 }
 
-if(!$valid_query || !isset($_GET['r_id']) || !$recipe_xml) {
+if(!isset($valid_query) || $valid_query || !isset($_GET['r_id']) || !$xml) {
 	$id = 4;
 	$recipe_db = search_recipe($id); // display Apple Pie by default.
-	$recipe_xml = XMLReader::open("recipe/$id.xml");
+	$xml->open("recipe/$id.xml");
+}
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comment'])) {
+    if (isset($_COOKIE['user_id'])) {
+        $userId = $_COOKIE['user_id'];
+        $content = $_POST['comment'];
+        $parentCommentId = $_POST['parent_comment_id'] ?? "null" ;
+        insert_comment($userId,$content,$parentCommentId);
+        // Insert the comment into the database
+            $query = "INSERT INTO comment (user, recipe, content, date, parent) VALUES (:user, :r_id , :content, NOW(), :parent)";
+            $stmt = $conn->prepare($query);
+            $stmt->bindParam(':user', $userId);
+            $stmt->bindParam(':content', $content);
+            $stmt->execute();
+	}
 }
 
 $title = format_fr($recipe_db["title"]);
@@ -25,29 +40,29 @@ $ingredients = array();
 $ustensils = array();
 $steps = array();
 
-while($recipe_xml->read()) { // Go through the XML tree
+while($xml->read()) { // Go through the XML tree
 
 	// Filter only opening tags
-	if($recipe_xml->nodeType !== 1)
+	if($xml->nodeType !== 1)
 		continue;
 
 	// Filter by tag name
-	switch($recipe_xml->name) {
+	switch($xml->name) {
 		case 'id': // Ingredient IDs
-			$ingredient = $recipe_xml->readString();
+			$ingredient = $xml->readString();
 
 			// Fetch the corresponding amount
-			while($recipe_xml->name !== 'amount')
-				$recipe_xml->next();
+			while($xml->name !== 'amount')
+				$xml->next();
 
-			$ingredients[$ingredient] = $recipe_xml->readString();
+			$ingredients[$ingredient] = $xml->readString();
 
 			break;
 		case 'ustensil': // Ustensil IDs
-			array_push($ustensils, $recipe_xml->readString());
+			array_push($ustensils, $xml->readString());
 			break;
 		case 'step': // The recipe steps
-			array_push($steps, $recipe_xml->readString());
+			array_push($steps, $xml->readString());
 	}
 }
 
@@ -127,7 +142,14 @@ while($recipe_xml->read()) { // Go through the XML tree
 								"</span>".
 								"<span class='content'>".
 									$comment['content'].
-								"</span>";
+								"</span>" .
+								"<div class='reply'>".
+									"<form method='post' action='" . $_SERVER['PHP_SELF'] . "'>" .
+										"<input type='hidden' name='parent_comment_id' value='" . $comment['id'] ."'>" .
+										"<textarea name='comment' rows='2' cols='50' required></textarea><br>" .
+										"<input type='submit' value='Répondre'>" .
+									"</form>" .
+								"</div>" ;
 						foreach($comments as $child) {
 							if(($child['parent'] ?? 0) == $comment['id']) {
 								echo "<div class='child' id='" . $child['id'] . "'>".
@@ -143,9 +165,16 @@ while($recipe_xml->read()) { // Go through the XML tree
 									"</div>";
 							}
 						}
-						echo "</div>";
 					}
+					
+									
+								echo "</div>";
 				}
+				echo "<h3>Ajouter un commentaire</h3>" .
+					"<form method='post' action='" . $_SERVER['PHP_SELF'] . "'>" .
+					"<textarea name='comment' rows='4' cols='50' required></textarea><br>" .
+					"<input type='submit' value='commenter'>".
+					"</form>" ;
 			?>
 		</div>
 	</section>
