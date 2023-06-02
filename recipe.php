@@ -105,7 +105,7 @@ while($recipe_xml->read()) { // Go through the XML tree
 						"<div id='parchment_content'>";
 							$step_number = 0;
 							foreach ($steps as $step) {
-								echo "<div class='step'>".++$step_number." - $step</div>";
+								echo "<div class='step'><span class='step_number'>".++$step_number."</span>  - $step</div>";
 							}
 							echo "<div id='signature'>".
 									$recipe_db['nickname'].

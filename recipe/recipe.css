@@ -172,11 +172,10 @@ h2:after {
     margin-top: .75em;
     text-align: justify;
 }
-.step::first-letter {
+.step_number {
     float: left;
-    font-size: 2em/1em;
     text-shadow: 1px 1px 1px black;
-    margin: 0 0.75rem;
+    margin: 0 0.75rem !important;
 }
 
 #signature {
