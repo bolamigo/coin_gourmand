@@ -232,7 +232,7 @@ function alert($msg) {
 }
 
 //This function return true if user is admin
-function isUserAdmin($userId) {
+function is_user_admin($userId) {
     global $conn;
     $res = $conn->prepare("SELECT admin FROM user WHERE user.id = $userId");
     $res->execute();
@@ -240,6 +240,14 @@ function isUserAdmin($userId) {
     $res->fetch();
     $res->close();
     return $userId;
+}
+
+
+function delete_recipe_from_DB($recipeId) {
+    global $conn;
+    $res = $conn->prepare("DELETE FROM recipe WHERE recipe.id = $recipeId");
+    $res->execute();
+    $res->close();
 }
 
 
