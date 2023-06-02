@@ -63,10 +63,26 @@ section {
 }
 
 #main_title {
-	text-align: center;
-	font-size: 4rem;
-	color: whitesmoke;
-	margin-bottom: 0;
+  text-align: center;
+  color: whitesmoke;
+}
+@media (min-width: 1280px) {
+  #main_title {
+    font-size: 3.5rem;
+    margin: 0 0 0 20px;
+  }
+}
+@media (max-width: 1279px) {
+  #main_title {
+    font-size: 3rem;
+    margin: 0 0 0 10px;
+  }
+}
+@media (max-width: 1185px) {
+  #main_title {
+    font-size: 2.5rem;
+    margin: 0;
+  }
 }
 
 #slogan {
@@ -211,10 +227,6 @@ div.item {
   padding: 8px;
   background-color: black;
   color: white;
-}
-
-#header h1 {
-  margin: 0;
 }
 
 .glow-on-hover {
