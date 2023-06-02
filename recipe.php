@@ -101,15 +101,14 @@ while($recipe_xml->read()) { // Go through the XML tree
 			<h2>Préparation</h2>
 			<?php
 				echo "<div id='steps'>".
-						"<div id='parchment'>".
-							"<div id='parchment_content'>";
-								$step_number = 0;
-								foreach ($steps as $step) {
-									echo "<div class='step'>".++$step_number." - $step</div>";
-								}
-								echo "<div id='signature'>".
-										$recipe_db['nickname'].
-								"</div>".
+						"<div id='parchment'></div>".
+						"<div id='parchment_content'>";
+							$step_number = 0;
+							foreach ($steps as $step) {
+								echo "<div class='step'>".++$step_number." - $step</div>";
+							}
+							echo "<div id='signature'>".
+									$recipe_db['nickname'].
 							"</div>".
 						"</div>".
 					"</div>";
@@ -150,6 +149,12 @@ while($recipe_xml->read()) { // Go through the XML tree
 			?>
 		</div>
 	</section>
+	<svg>
+		<filter id="wavy">
+			<feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="6" seed="2" />
+			<feDisplacementMap in="SourceGraphic" scale="20" />
+		</filter>
+	</svg>
 
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script src="jquery.js"></script>

@@ -1,4 +1,9 @@
-close_search_button();
+$(document).ready(async function() {
+    close_search_button();
+    await sleep(256); // #steps is changing size
+    $("#parchment").css('height', $("#steps").height() - 64);
+    console.log($("#steps").height());
+});
 
 function close_search_button() {
     $("#search_button").html("<ion-icon class='clickable' name='search'></ion-icon>");

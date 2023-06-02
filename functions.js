@@ -3,6 +3,10 @@ const regex = {
 	mail: /^([a-z0-9_\.\+-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 };
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // This function returns the next element in the DOM hierarchy that matches the given selector
 function nextInDOM(_selector, _subject) {
 	let next = getNext(_subject); // Get the next element after the subject element
