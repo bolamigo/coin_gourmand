@@ -81,7 +81,7 @@ form {
 	border-radius: 4px;
 }
 
-header form input {
+header form input, body section div form input {
 	width: 90%;
 	background-color: transparent;
 	padding: 10px;
