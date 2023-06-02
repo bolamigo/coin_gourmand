@@ -27,7 +27,7 @@ function close_search_button() {
             "<ion-icon id='close_search' class='clickable' name='close-circle-outline'></ion-icon>"
         );
         $(this).css("top", "0");
-        $(this).css("left", "0");
+        $(this).css("right", "0");
         $("input:text:visible:first").focus();
     });
 

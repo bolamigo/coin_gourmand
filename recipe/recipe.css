@@ -13,7 +13,7 @@ section {
     display: block;
     position: absolute;
     top: 32px;
-    left: 32px;
+    right: 32px;
 }
 
 #search_button form {

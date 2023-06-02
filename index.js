@@ -28,5 +28,16 @@ $(document).ready(function() {
 		$(this).click(function() { // When user clicks on the recipe (either image or title)
 			open_link_new_tab(`https://bolamigo.fr/coin_gourmand/recipe.php?r_id=${id}`); // Open the recipe page in a new tab
 		});
-	})
+	});
+
+	const homepage = `https://bolamigo.fr/coin_gourmand/`;
+
+	if (window.location.href !== homepage) {
+		// Logo = home button
+		$('body').append(`<div id='logo' class='clickable'><img src='logo.png' class='unselectable'/><span>Accueil</span></div>`);
+		$('#logo').click(function() {
+			window.location.href = homepage;
+		});
+		$('#logo').prop('title', homepage);
+	}
 });

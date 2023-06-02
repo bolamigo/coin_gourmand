@@ -189,6 +189,7 @@ while($xml->read()) { // Go through the XML tree
 	<script src="jquery.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/validate-js/2.0.1/validate.min.js" integrity="sha512-8GLIg5ayTvD6F9ML/cSRMD19nHqaLPWxISikfc5hsMJyX7Pm+IIbHlhBDY2slGisYLBqiVNVll+71CYDD5RBqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="functions.js?1"></script>
+	<script src="index.js?1"></script>
 	<script src="recipe/recipe.js?1"></script>
 </body>
 </html>
