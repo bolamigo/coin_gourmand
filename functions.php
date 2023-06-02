@@ -230,4 +230,21 @@ function test_input($data) {
 function alert($msg) {
     echo "<script type='text/javascript'>alert('$msg');</script>";
 }
+
+//This function return true if user is admin
+function isUserAdmin($userId) {
+    global $conn;
+    $res = $conn->prepare("SELECT admin FROM user WHERE user.id = $userId");
+    $res->execute();
+    $res->bind_result($admin);
+    $res->fetch();
+    $res->close();
+    return $userId;
+}
+
+
+
+
 ?>
+
+
