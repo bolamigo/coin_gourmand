@@ -17,24 +17,11 @@ if(!isset($valid_query) || !$valid_query || !isset($_COOKIE['user_id'])) {
 	$user = search_user($nickname_cookie);
 }
 
-echo '<br>get<br>';
-echovar($_GET);
-echo '<br>isset(get field)<br>';
-echovar(isset($_GET['field']));
-echo '<br>isset(get value)<br>';
-echovar(isset($_GET['value']));
-
 // Check if the form has been submitted
 if (isset($_GET['field']) && isset($_GET['value'])) {
 	$id = $user['id'];
-	echo "<br>id<br>";
-	echovar($id);
     $field = $_GET['field'];
-	echo "<br>field<br>";
-	echovar($field);
     $value = $_GET['value'];
-	echo "<br>value<br>";
-	echovar($value);
 
     if ($field == 'gender') {
         if ($value == 'homme') {
