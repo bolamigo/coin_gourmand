@@ -59,9 +59,11 @@ foreach($shared_recipes_db as $recipe) {
             ?>
 			<h2>Recettes partagées</h2>
             <?php
-            foreach($shared_recipes as $recipe_id => $recipe_title) {
-                echo "<div class='item clickable' id='$recipe_id' src='recipe/image/$recipe_id.jpg' data-title='$recipe_title'></div>";
-            }
+            echo "<div id='search_results'>";
+                foreach($shared_recipes as $recipe_id => $recipe_title) {
+                    echo "<div class='item clickable' id='$recipe_id' src='recipe/image/$recipe_id.jpg' data-title='$recipe_title'></div>";
+                }
+            echo "</div>";
             ?>
 		</div>
 	</section>
