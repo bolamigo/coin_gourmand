@@ -80,6 +80,19 @@ while($xml->read()) { // Go through the XML tree
 	<link rel="stylesheet" href="recipe/recipe.css?1">
 </head>
 <body>
+
+	<?php
+		if (isset($_COOKIE['user_id'])) {
+			$userName = get_user_id($_COOKIE["user_id"]);
+			$userID = get_user($userName);
+			$isAdmin = isAdmin($userID);
+			if ($isAdmin) {
+				echo "<button class='option-button'>Options</button>";
+			}
+		}
+	?>
+
+
 	<section>
 		<div class="container">
 			<h1 id="main_title"><?php echo $title?></h1> <div id="search_button"></div>
