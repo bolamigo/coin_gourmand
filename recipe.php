@@ -66,7 +66,7 @@ while($recipe_xml->read()) { // Go through the XML tree
 <body>
 	<section>
 		<div class="container">
-			<h1 id="main_title"><?php echo $title?></h1> <div id="search_button"><ion-icon class="clickable" name="search"></ion-icon></div>
+			<h1 id="main_title"><?php echo $title?></h1> <div id="search_button"></div>
 			<img id="main_img" src="<?php echo "recipe/image/$id.jpg"?>" class="unselectable"/>
 			<h2>Ingrédients</h2>
 			<?php
