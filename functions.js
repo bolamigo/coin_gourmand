@@ -100,6 +100,7 @@ function login() {
         xhr.onerror = function() {
             alert("Erreur réseau !");
         };
+		console.log(data);
         xhr.send(new URLSearchParams(data)); // Envoyer les données du formulaire
         window.location.href = "https://bolamigo.fr/coin_gourmand/"; // Redirection to homepage
     });
@@ -107,7 +108,7 @@ function login() {
 
 
 function deleteCookie(name) {
-    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/;';
+    document.cookie = name + '=; path=/coin_gourmand; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
 function logout() {
