@@ -11,7 +11,7 @@ include "functions.php";
 </head>
 <body>
 	<header id="header">
-		<h1 id="main_title" class="unselectable">Le Coin Gourmand</h1>
+		<a href="#" class="custom-link"> <h1 id="main_title" class="unselectable"> Le Coin Gourmand </h1> </a> 
 		<form action="search_results.php" method="get">
 				<input type="text" name="keywords" placeholder="Rechercher une recette..." required>
 				<ion-icon name="search"></ion-icon>
