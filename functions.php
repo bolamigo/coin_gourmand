@@ -236,10 +236,8 @@ function is_user_admin($userId) {
     global $conn;
     $res = $conn->prepare("SELECT admin FROM user WHERE user.id = $userId");
     $res->execute();
-    $res->bind_result($admin);
     $res->fetch();
-    $res->close();
-    return $userId;
+    return $res['admin'];
 }
 
 
@@ -247,12 +245,7 @@ function delete_recipe_from_DB($recipeId) {
     global $conn;
     $res = $conn->prepare("DELETE FROM recipe WHERE recipe.id = $recipeId");
     $res->execute();
-    $res->close();
 }
-
-
-
-
 ?>
 
 
