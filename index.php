@@ -24,8 +24,7 @@ include_once "functions.php";
 							$_COOKIE["user_id"].
 						"</button>".
 					"</a>";
-				// TODO onclick disconnect, destroy cookie
-				echo "<button class='unselectable glow-on-hover' type='button'>".
+				echo "<button class='unselectable glow-on-hover' type='button' onclick='logout()' >".
 						"Se déconnecter".
 					"</button>";
 			}
