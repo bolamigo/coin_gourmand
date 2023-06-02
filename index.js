@@ -12,10 +12,17 @@ $(document).ready(function() {
 		// search results are DIVs, auto-generate img, title & link with id
 		if($(this)[0].tagName === 'DIV') {
 			$(this).append(`<img src="recipe/image/${id}.jpg">`);
-			$(this).append(`<div class='flex-container'>`+
-				`<h2>${format_fr(title)}</h2>`+
-				`<h3>${author}</h3>`+
-			`</div>`);
+			if(window.location.href.includes('profile')) {
+				$(this).append(`<div class='flex-container' style='justify-content: center;'>`+
+					`<span class='recipe_preview_title'>${format_fr(title)}</span>`+
+				`</div>`);
+			}
+			else {
+				$(this).append(`<div class='flex-container'>`+
+					`<h2>${format_fr(title)}</h2>`+
+					`<h3>${author}</h3>`+
+				`</div>`);
+			}
 		}
 		$(this).prop('title', format_fr(title));
 		$(this).click(function() { // When user clicks on the recipe (either image or title)

@@ -104,7 +104,7 @@ h2:after {
     margin-bottom: 0.25em;
 }
 
-#ingredients, #ustensils {
+#ingredients, #ustensils, #information {
     margin-top: 50px;
     width: 100%;
     display: grid;
@@ -112,7 +112,7 @@ h2:after {
     grid-template: auto /repeat(auto-fit, minmax(200px, 1fr));
 }
 
-.ingredient, .ustensil {
+.ingredient, .ustensil, .data {
     color: whitesmoke;
     max-width: 666px;
     border-radius: 8px;
@@ -206,4 +206,13 @@ h2:after {
 
 svg {
     display: none;
+}
+
+.data sup {
+    margin-right: 4px;
+}
+
+.recipe_preview_title {
+    color: whitesmoke;
+    font-size: 2em;
 }

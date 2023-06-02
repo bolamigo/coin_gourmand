@@ -55,11 +55,57 @@ function datetime_fr($datetime) {
     if($day == '1')
         $day .= '<sup>er</sup>';
 
-    $hour = substr($datetime, 11, 2);
-    $minute = substr($datetime, 14, 2);
-    $second = substr($datetime, 17, 2);
+    $hours = ""; // in case $datetime is in fact a date
 
-    return "le $day $month $year à $hour h $minute et $second s.";
+    // if $datetime is sql datetime type, not date.
+    if(strlen($datetime) > 10) {
+        $hour = substr($datetime, 11, 2);
+        $minute = substr($datetime, 14, 2);
+        $second = substr($datetime, 17, 2);
+
+        $hours = " à $hour h $minute et $second s";
+    }
+
+    return "le $day $month $year$hours.";
+}
+
+function get_genre ($genre_id) {
+    switch($genre_id) {
+        case 0:
+            $genre = "autre";
+            break;
+        case 1:
+            $genre = "femme";
+            break;
+        case 2:
+            $genre = "homme";
+    }
+    return $genre;
+}
+
+// This function searches for a user's information.
+function search_user($id) {
+    global $conn;
+	$res = $conn->prepare(
+        "SELECT id, mail, nickname, gender, age, date_creation as date FROM `user` u WHERE nickname = :query;"
+    );
+    $res->bindParam(':query', $id);
+	$res->setFetchMode(PDO::FETCH_ASSOC);
+	$res->execute();
+	$tab = $res->fetchAll(); // Put the user into in a table.
+	return $tab[0]; // Return the first and only element of the table, the user.
+}
+
+function get_user_recipes($user_id) {
+    global $conn;
+	$res = $conn->prepare(
+        "SELECT id, title FROM `recipe` WHERE author = :query LIMIT 10;"
+    );
+    $res->bindParam(':query', $user_id);
+	$res->setFetchMode(PDO::FETCH_ASSOC);
+	$res->execute();
+	$tab = $res->fetchAll(); // Put the recipes into in a table.
+	return $tab; // Return all the results.
 }
 
 // This function searches for a given recipe ID in the database and returns the unique result.
@@ -97,7 +143,7 @@ function search_ustensils($IDs) {
     );
 	$res->setFetchMode(PDO::FETCH_ASSOC);
 	$res->execute();
-	$tab = $res->fetchAll(); // Put all the ingredients into in a table.
+	$tab = $res->fetchAll(); // Put all the ustensils into in a table.
 	return $tab;
 }
 
