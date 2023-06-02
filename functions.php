@@ -12,7 +12,7 @@ function format_fr($string) {
 function search_recipe($id) {
     global $conn;
 	$res = $conn->prepare(
-        "SELECT * FROM recipe WHERE id = :query;"
+        "SELECT r.*, u.nickname as nickname FROM recipe r JOIN user u ON r.author = u.id WHERE r.id = :query;"
     );
     $res->bindParam(':query', $id);
 	$res->setFetchMode(PDO::FETCH_ASSOC);

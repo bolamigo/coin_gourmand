@@ -67,38 +67,52 @@ while($recipe_xml->read()) { // Go through the XML tree
 	<section>
 		<div class="container">
 			<h1 id="main_title"><?php echo $title?></h1> <div id="search_button"><ion-icon class="clickable" name="search"></ion-icon></div>
+			<img id="main_img" src="<?php echo "recipe/image/$id.jpg"?>" class="unselectable"/>
 			<h2>Ingrédients</h2>
 			<?php
 				ksort($ingredients);
 				$ingredients_db = search_ingredients($ingredients);
 				$ingredients_values = array_values($ingredients);
-				foreach ($ingredients_db as $ingredient) {
-					$name = $ingredient['name'];
-					$value = current($ingredients_values);
-					$unit = $ingredient['unit'] ?? '';
-					$image = get_media($ingredient['media_id']) ?? '';
+				echo "<div id='ingredients'>";
+					foreach ($ingredients_db as $ingredient) {
+						$name = $ingredient['name'];
+						$value = current($ingredients_values);
+						$unit = $ingredient['unit'] ?? '';
+						$image = get_media($ingredient['media_id']) ?? '';
 
-					echo "<div class='ingredient'>$name : $value $unit</div>"; // TODO formatting
+						echo "<div class='ingredient'>$name : $value $unit</div>";
 
-					next($ingredients_values);
-				}
+						next($ingredients_values);
+					}
+				echo "</div>";
 			?>
 			<h2>Ustensiles</h2>
 			<?php
 				$ustensils = search_ustensils($ustensils);
-				foreach ($ustensils as $ustensil) {
-					$name = $ustensil['name'];
-					$image = get_media($ustensil['media_id']) ?? '';
+				echo "<div id='ustensils'>";
+					foreach ($ustensils as $ustensil) {
+						$name = $ustensil['name'];
+						$image = get_media($ustensil['media_id']) ?? '';
 
-					echo "<div class='ustensil'>$name</div>"; // TODO formatting
-				}
+						echo "<div class='ustensil'>$name</div>";
+					}
+				echo "</div>";
 			?>
 			<h2>Préparation</h2>
 			<?php
-				$step_number = 0;
-				foreach ($steps as $step) {
-					echo "<div class='step'>".++$step_number." - $step</div>"; // TODO formatting
-				}
+				echo "<div id='steps'>".
+						"<div id='parchment'>".
+							"<div id='parchment_content'>";
+								$step_number = 0;
+								foreach ($steps as $step) {
+									echo "<div class='step'>".++$step_number." - $step</div>";
+								}
+								echo "<div id='signature'>".
+										$recipe_db['nickname'].
+								"</div>".
+							"</div>".
+						"</div>".
+					"</div>";
 			?>
 			<h2>Commentaires</h2>
 			<?php
