@@ -57,7 +57,7 @@ foreach($shared_recipes_db as $recipe) {
                     "<div class='data'>Inscrit depuis $date_creation</div>".
                 "</div>";
             ?>
-			<h2>Recettes partagées</h2>
+			<h2>Recettes partagées</h2> <a id="new_recipe_button" href="new_recipe.php"><ion-icon class="clickable" name="add" role="img"></a>
             <?php
             echo "<div id='search_results'>";
                 foreach($shared_recipes as $recipe_id => $recipe_title) {
