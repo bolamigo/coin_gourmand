@@ -108,6 +108,16 @@ function search_user($id) {
 	return $tab[0]; // Return the first and only element of the table, the user.
 }
 
+function update_user($id, $field, $value) {
+    global $conn;
+    $res = $conn->prepare(
+        "UPDATE `user` SET :field = :value WHERE id = $id;"
+    );
+    $res->bindParam(':field', $field);
+    $res->bindParam(':value', $value);
+    $res->execute();
+}
+
 function get_user_recipes($user_id) {
     global $conn;
 	$res = $conn->prepare(

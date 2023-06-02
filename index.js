@@ -39,5 +39,13 @@ $(document).ready(function() {
 			window.location.href = homepage;
 		});
 		$('#logo').prop('title', homepage);
+
+		$('.data button').css('display', 'none');
+	
+		$("#change_mail, #change_nickname, #change_gender, #change_age").on("click", function(){
+			$(this).after(`<textarea name='value' rows='4' cols='100' required></textarea>`);
+			$(this).next().next().css('display', 'inline-block');
+			$(this).remove();
+		});
 	}
 });
