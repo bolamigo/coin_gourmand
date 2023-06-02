@@ -131,6 +131,12 @@ while($xml->read()) { // Go through the XML tree
 			?>
 			<h2>Commentaires</h2>
 			<?php
+				echo "<div id='comment-box'>".
+						"<form method='post' action='".$_SERVER['REQUEST_URI']."'>" .
+							"<textarea name='comment' rows='4' cols='100' required></textarea><br>" .
+							"<input type='submit' value='Commenter'>".
+						"</form>".
+					"</div>";
 				$comments = get_recipe_comments($id);
 				foreach($comments as $comment) {
 					if(!$comment['parent']) {
@@ -143,14 +149,7 @@ while($xml->read()) { // Go through the XML tree
 								"</span>".
 								"<span class='content'>".
 									$comment['content'].
-								"</span>" .
-								"<div class='reply'>".
-									"<form method='post' class='answer-box' action='".$_SERVER['REQUEST_URI']."'>" .
-										"<input type='hidden' name='parent_comment_id' value='" . $comment['id'] ."'>" .
-										"<textarea name='comment' rows='2' cols='50' required></textarea><br>" .
-										"<input type='submit' value='Répondre'>" .
-									"</form>" .
-								"</div>" ;
+								"</span>";
 						foreach($comments as $child) {
 							if(($child['parent'] ?? 0) == $comment['id']) {
 								echo "<div class='child' id='" . $child['id'] . "'>".
@@ -166,14 +165,16 @@ while($xml->read()) { // Go through the XML tree
 									"</div>";
 							}
 						}
-						echo "</div>";
+						echo "<div class='reply'>".
+								"<form method='post' action='".$_SERVER['REQUEST_URI']."'>" .
+									"<input type='hidden' name='parent_comment_id' value='" . $comment['id'] ."'>" .
+									"<textarea name='comment' rows='4' cols='100' required></textarea><br>" .
+									"<input type='submit' value='Répondre'>" .
+								"</form>" .
+							"</div>".
+						"</div>"; // closing .comment
 					}
 				}
-				echo "<h3>Ajouter un commentaire</h3>" .
-					"<form method='post' id='comment-box' action='".$_SERVER['REQUEST_URI']."'>" .
-						"<textarea name='comment' rows='4' cols='50' required></textarea><br>" .
-						"<input type='submit' value='commenter'>".
-					"</form>";
 			?>
 		</div>
 	</section>

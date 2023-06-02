@@ -191,7 +191,7 @@ function insert_comment($userId, $recipeID, $content, $parentCommentId){
             "INSERT INTO comment (user, recipe, content, date, parent) VALUES ($userId, $recipeID, :content, NOW(), NULL);"
         );
     }
-	else { // New answer
+	else { // New reply
         $res = $conn->prepare(
             "INSERT INTO comment (user, recipe, content, date, parent) VALUES ($userId, $recipeID, :content, NOW(), $parentCommentId);"
         );

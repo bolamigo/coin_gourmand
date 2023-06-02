@@ -1,8 +1,19 @@
 $(document).ready(async function() {
+
+    // activating enter-to-sumbit in comment textareas. SHIFT + Enter is needed for a new line
+    $("form textarea").keypress(function (e) {
+        if(e.which === 13 && !e.shiftKey) {
+            e.preventDefault();
+            $(this).closest("form").submit();
+        }
+    });
+
     close_search_button();
+
     await sleep(256); // #steps is changing size
+
+    // Adjusting the size of the parchment
     $("#parchment").css('height', $("#steps").height() - 64);
-    console.log($("#steps").height());
 });
 
 function close_search_button() {

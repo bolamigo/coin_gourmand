@@ -204,8 +204,27 @@ h2:after {
     font-weight: 400;
 }
 
-svg {
-    display: none;
+#comment-box form, .reply form {
+    max-width: max-content;
+    background-color: rgba(255, 255, 255, .1);
+}
+
+form textarea {
+    max-width: 100%;
+    background-color: transparent;
+    color: whitesmoke;
+    font-family: cursive;
+}
+
+#comment-box input[type="submit"], .reply input[type="submit"] {
+    font-size: 1em;
+    width: 100%;
+    color: whitesmoke;
+    font-family: cursive;
+}
+
+#comment-box input[type="submit"] {
+    font-size: 1.5em;
 }
 
 .data sup {
@@ -215,4 +234,8 @@ svg {
 .recipe_preview_title {
     color: whitesmoke;
     font-size: 2em;
+}
+
+svg {
+    display: none;
 }
