@@ -358,3 +358,8 @@ body.menu-toggled > .meta-link > span {
   font-family: "Rubik", sans-serif;
   font-weight: 500;
 }
+
+.custom-link {
+    color: #000; /* Couleur du texte */
+    text-decoration: none; /* Supprime le soulignement par défaut */
+}
