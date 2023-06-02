@@ -239,3 +239,12 @@ form textarea {
 svg {
     display: none;
 }
+
+h1 ion-icon {
+    height: 1em;
+    width: 1em;
+    border-radius: 0.25em;
+    position: relative;
+    left: 10px;
+    top: 5px;
+}

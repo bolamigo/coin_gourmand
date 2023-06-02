@@ -1,5 +1,5 @@
 <?php
-include "functions.php";
+include_once "functions.php";
 
 if (isset($_COOKIE['user_id'])){
 	$id = $_COOKIE['user_id'];

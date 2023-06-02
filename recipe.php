@@ -1,5 +1,5 @@
 <?php
-include "functions.php";
+include_once "functions.php";
 $xml = new XMLReader;
 
 $id = 4; // display Apple Pie by default.

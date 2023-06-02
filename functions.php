@@ -1,5 +1,5 @@
 <?php
-include "sql.php"; // Connection to the database.
+include_once "sql.php"; // Connection to the database.
 
 // This function formats the string to be displayed as French text and read by French users.
 function format_fr($string) {

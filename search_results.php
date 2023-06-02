@@ -1,5 +1,5 @@
 <?php
-include "functions.php"; // connect to the database
+include_once "functions.php"; // connect to the database
 $keywords = $_GET["keywords"]; // retrieve keywords
 $valid = preg_match('/^[a-zA-Z0-9 àâçéèêëîïôùûüÀÂÇÉÈÊËÎÏÔÙÛÜ\"\'\-]+$/', $keywords); // ensure the user input is coherent and avoid sql injection
 function strtosqlregex($string){

@@ -1,5 +1,5 @@
 <?php
-include "functions.php"; // Inclure les fonctions PHP
+include_once "functions.php"; // Inclure les fonctions PHP
 
 // Vérifier si les données ont été envoyées en utilisant la méthode POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
