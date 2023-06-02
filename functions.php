@@ -83,6 +83,18 @@ function get_genre ($genre_id) {
     return $genre;
 }
 
+function get_user_id($nickname) {
+    global $conn;
+	$res = $conn->prepare(
+        "SELECT id FROM user WHERE nickname = :query;"
+    );
+    $res->bindParam(':query', $nickname);
+	$res->setFetchMode(PDO::FETCH_ASSOC);
+	$res->execute();
+	$tab = $res->fetchAll();
+	return $tab[0]['id']; // Directly return the ID.
+}
+
 // This function searches for a user's information.
 function search_user($id) {
     global $conn;
@@ -170,6 +182,23 @@ function get_recipe_comments($recipe_id) {
 	$res->execute();
 	$tab = $res->fetchAll();
 	return $tab;
+}
+
+function insert_comment($userId, $recipeID, $content, $parentCommentId){
+    global $conn;
+    if($parentCommentId === 0) { // New comment
+        $res = $conn->prepare(
+            "INSERT INTO comment (user, recipe, content, date, parent) VALUES ($userId, $recipeID, :content, NOW(), NULL);"
+        );
+    }
+	else { // New answer
+        $res = $conn->prepare(
+            "INSERT INTO comment (user, recipe, content, date, parent) VALUES ($userId, $recipeID, :content, NOW(), $parentCommentId);"
+        );
+    }
+    $res->bindParam(':content', $content);
+	$res->setFetchMode(PDO::FETCH_ASSOC);
+	$res->execute();
 }
 
 // Utility function for debug, displays the content of a variable

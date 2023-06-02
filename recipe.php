@@ -2,10 +2,12 @@
 include "functions.php";
 $xml = new XMLReader;
 
+$id = 4; // display Apple Pie by default.
+
 if (isset($_GET['r_id'])){
 	$id = $_GET['r_id'];
-	// Ensure the user input is coherent ('_' and no space) and avoid sql injection.
-	$valid_query = preg_match('/^[\w\pL\pMàâçéèêëîïôùûüÀÂÇÉÈÊËÎÏÔÙÛÜ\"\'\-]+$/', $id);
+	// Ensure the user input is coherent (only digits) and avoid sql injection.
+	$valid_query = preg_match('/^[0-9]+$/', $id);
 	if($valid_query) {
 		$recipe_db = search_recipe($id);
 		if(count($recipe_db) == 0)
@@ -15,23 +17,22 @@ if (isset($_GET['r_id'])){
 	}
 }
 
-if(!isset($valid_query) || $valid_query || !isset($_GET['r_id']) || !$xml) {
-	$id = 4;
-	$recipe_db = search_recipe($id); // display Apple Pie by default.
-	$xml->open("recipe/$id.xml");
+if(!isset($valid_query) || !$valid_query || !isset($_GET['r_id']) || !file_exists("recipe/$id.xml")) {
+	$id = 4; // display Apple Pie by default.
+	$recipe_db = search_recipe(4);
+	$xml->open("recipe/4.xml");
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comment'])) {
     if (isset($_COOKIE['user_id'])) {
-        $userId = $_COOKIE['user_id'];
+        $userID = get_user_id($_COOKIE["user_id"]);
         $content = $_POST['comment'];
-        $parentCommentId = $_POST['parent_comment_id'] ?? "null" ;
-        insert_comment($userId,$content,$parentCommentId);
-        // Insert the comment into the database
-            $query = "INSERT INTO comment (user, recipe, content, date, parent) VALUES (:user, :r_id , :content, NOW(), :parent)";
-            $stmt = $conn->prepare($query);
-            $stmt->bindParam(':user', $userId);
-            $stmt->bindParam(':content', $content);
-            $stmt->execute();
+        $parentCommentID = $_POST['parent_comment_id'] ?? 0;
+
+        insert_comment($userID, $id, $content, $parentCommentID);
+
+		// Refresh the page to show the newly posted comment
+		header('Location: '.$_SERVER['REQUEST_URI']);
+		exit();
 	}
 }
 
@@ -144,7 +145,7 @@ while($xml->read()) { // Go through the XML tree
 									$comment['content'].
 								"</span>" .
 								"<div class='reply'>".
-									"<form method='post' action='" . $_SERVER['PHP_SELF'] . "'>" .
+									"<form method='post' class='answer-box' action='".$_SERVER['REQUEST_URI']."'>" .
 										"<input type='hidden' name='parent_comment_id' value='" . $comment['id'] ."'>" .
 										"<textarea name='comment' rows='2' cols='50' required></textarea><br>" .
 										"<input type='submit' value='Répondre'>" .
@@ -165,16 +166,14 @@ while($xml->read()) { // Go through the XML tree
 									"</div>";
 							}
 						}
+						echo "</div>";
 					}
-					
-									
-								echo "</div>";
 				}
 				echo "<h3>Ajouter un commentaire</h3>" .
-					"<form method='post' action='" . $_SERVER['PHP_SELF'] . "'>" .
-					"<textarea name='comment' rows='4' cols='50' required></textarea><br>" .
-					"<input type='submit' value='commenter'>".
-					"</form>" ;
+					"<form method='post' id='comment-box' action='".$_SERVER['REQUEST_URI']."'>" .
+						"<textarea name='comment' rows='4' cols='50' required></textarea><br>" .
+						"<input type='submit' value='commenter'>".
+					"</form>";
 			?>
 		</div>
 	</section>
