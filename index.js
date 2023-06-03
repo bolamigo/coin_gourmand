@@ -31,8 +31,13 @@ $(document).ready(function() {
 	});
 
 	const homepage = `https://bolamigo.fr/coin_gourmand/`;
-
-	if (window.location.href !== homepage) {
+	if(window.location.href === homepage) {
+		if (getCookie("user_id") !== 'none' && getCookie("logged") === 'none') {
+			createCookie("logged", "1", 10)
+			/*sleep(100).then*/(location.reload());
+		}
+	}
+	else {
 		// Logo = home button
 		$('body').append(`<div id='logo' class='clickable'><img src='logo.png' class='unselectable'/><span>Accueil</span></div>`);
 		$('#logo').click(function() {
