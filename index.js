@@ -34,7 +34,7 @@ $(document).ready(function() {
 	if(window.location.href === homepage) {
 		if (getCookie("user_id") !== 'none' && getCookie("logged") === 'none') {
 			createCookie("logged", "1", 10)
-			/*sleep(100).then*/(location.reload());
+			location.reload();
 		}
 	}
 	else {
