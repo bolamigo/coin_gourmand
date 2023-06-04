@@ -18,7 +18,6 @@ const handleOnMove = e => {
     nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
 
   track.dataset.percentage = nextPercentage;
-  console.log(track.dataset.percentage);
 
   track.animate({
     transform: `translate(${nextPercentage}%, -50%)`
@@ -31,22 +30,14 @@ const handleOnMove = e => {
   }
 }
 
-/* -- Had to add extra lines for touch events -- */
-
 window.onmousedown = e => handleOnDown(e);
-
 window.ontouchstart = e => handleOnDown(e.touches[0]);
-
 window.onmouseup = e => handleOnUp(e);
-
 window.ontouchend = e => handleOnUp(e.touches[0]);
-
 window.onmousemove = e => handleOnMove(e);
-
 window.ontouchmove = e => handleOnMove(e.touches[0]);
 
 document.addEventListener("DOMContentLoaded", function() {
-  console.log("ready");
   track.dataset.mouseDownAt = "0";
   track.dataset.percentage = -50;
   track.dataset.prevPercentage = -50;

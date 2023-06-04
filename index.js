@@ -39,7 +39,7 @@ $(document).ready(function() {
 	}
 	else {
 		// Logo = home button
-		$('body').append(`<div id='logo' class='clickable'><img src='logo.png' class='unselectable'/><span>Accueil</span></div>`);
+		$('body').append(`<div id='logo' class='clickable unselectable'><img src='logo.png' class='unselectable'/><span>Accueil</span></div>`);
 		$('#logo').click(function() {
 			window.location.href = homepage;
 		});

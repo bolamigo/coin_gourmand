@@ -14,6 +14,7 @@ $(document).ready(async function() {
 
     // Adjusting the size of the parchment
     $("#parchment").css('height', $("#steps").height() - 64);
+    $("#parchment").css('width', $("#steps").width() - 64);
 });
 
 function close_search_button() {
