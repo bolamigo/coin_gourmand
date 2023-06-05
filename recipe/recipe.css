@@ -26,6 +26,13 @@ section {
     top: 5px;
 }
 
+ion-icon#close_search {
+    position: absolute;
+    top: 32px;
+    right: 10px;
+    z-index: 10;
+}
+
 #main_title {
     display: block;
     text-align: center;
@@ -38,7 +45,6 @@ section {
     display: block;
     content: "";
     position: relative;
-    top: 6.4rem;
     bottom: 3px;
     left: 50%;
     margin-left: -16px;
@@ -55,6 +61,21 @@ section {
     left: 50%;
     margin-left: -128px;
     background-color: #b00;
+}
+@media (min-width: 1280px) {
+    #main_title:before {
+        top: 6.4rem;
+    }
+}
+@media (max-width: 1279px) {
+    #main_title:before {
+        top: 5.6rem;
+    }
+}
+@media (max-width: 1185px) {
+    #main_title:before {
+        top: 4.9rem;
+    }
 }
 
 #main_img{
